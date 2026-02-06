@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - GDSTC KHS Examination Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper admin-wrapper">
+        <!-- Admin Header -->
+        <header class="main-header admin-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GDSTC KHS - EXAMINATION ADMIN PANEL</h1>
+                        <h2>Secure Portal Management System</h2>
+                    </div>
+                </div>
+                <div class="admin-user">
+                    <i class="fas fa-user-shield"></i> Admin
+                    <button onclick="logoutAdmin()" class="btn btn-sm btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Admin Login Form (Initially Visible) -->
+        <div id="adminLogin" class="admin-login-container">
+            <div class="admin-login-form">
+                <div class="login-header">
+                    <i class="fas fa-lock fa-3x"></i>
+                    <h3>Admin Authentication</h3>
+                    <p>Enter admin password to access the portal</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminPassword">
+                        <i class="fas fa-key"></i> Admin Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="adminPassword" 
+                        placeholder="Enter admin password"
+                        autocomplete="off">
+                    <div class="input-hint">Default: GDSTCAdmin2024!</div>
+                </div>
+                
+                <button onclick="loginAdmin()" class="btn btn-primary btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Login to Admin Panel
+                </button>
+                
+                <div id="adminLoginError" class="login-error"></div>
+                
+                <div class="security-warning">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Warning:</strong> Keep this password secure. Do not share with students.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard (Hidden Initially) -->
+        <div id="adminDashboard" class="admin-dashboard hidden">
+            <div class="container">
+                <!-- Admin Navigation -->
+                <nav class="admin-nav">
+                    <div class="nav-buttons">
+                        <button id="btnDashboard" class="btn btn-nav nav-btn active" onclick="loadDashboard()">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </button>
+                        <button id="btnGenerateCodes" class="btn btn-nav nav-btn" onclick="generateExamCodes()">
+                            <i class="fas fa-key"></i> Generate Codes
+                        </button>
+                        <button id="btnStudentList" class="btn btn-nav nav-btn" onclick="viewStudentList()">
+                            <i class="fas fa-users"></i> Students
+                        </button>
+                        <button id="btnLoginLogs" class="btn btn-nav nav-btn" onclick="viewLoginLogs()">
+                            <i class="fas fa-clipboard-list"></i> Logs
+                        </button>
+                        <button id="btnSettings" class="btn btn-nav nav-btn" onclick="viewSettings()">
+                            <i class="fas fa-cogs"></i> Settings
+                        </button>
+                        <button id="btnSystemInfo" class="btn btn-nav nav-btn" onclick="showSystemInfo()">
+                            <i class="fas fa-info-circle"></i> System Info
+                        </button>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <button id="btnExportData" class="btn btn-success btn-sm" onclick="exportAllData()">
+                            <i class="fas fa-download"></i> Export All
+                        </button>
+                        <button id="btnResetData" class="btn btn-danger btn-sm" onclick="resetExamData()">
+                            <i class="fas fa-redo"></i> Reset Data
+                        </button>
+                        <button class="btn btn-warning btn-sm" onclick="backupSystem()">
+                            <i class="fas fa-save"></i> Backup
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- Main Admin Content Area -->
+                <main class="admin-main-content">
+                    <div class="content-header">
+                        <h3 id="contentTitle">
+                            <i class="fas fa-tachometer-alt"></i> System Dashboard
+                        </h3>
+                        <div id="contentSubtitle" class="content-subtitle">
+                            Welcome to the examination portal administration panel
+                        </div>
+                    </div>
+
+                    <div id="adminContent" class="admin-content">
+                        <!-- Dynamic content loads here -->
+                        <div class="loading-content">
+                            <i class="fas fa-spinner fa-spin fa-2x"></i>
+                            <p>Loading dashboard...</p>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Footer -->
+                <footer class="admin-footer">
+                    <div class="footer-info">
+                        <div class="footer-item">
+                            <i class="fas fa-server"></i>
+                            <span>System Status: <span class="status-active">Online</span></span>
+                        </div>
+                        <div class="footer-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="adminCurrentTime">Loading time...</span>
+                        </div>
+                        <div class="footer-item">
+                            <i class="fas fa-database"></i>
+                            <span id="storageStatus">Storage: Loading...</span>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        &copy; 2024 GDSTC KHS - Admin Panel v2.0
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin JavaScript -->
+    <script src="js/admin.js"></script>
+    
+    <!-- Initialize Admin Panel -->
+    <script>
+        // Check if already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('adminLogin').classList.add('hidden');
+                document.getElementById('adminDashboard').classList.remove('hidden');
+                loadDashboard();
+            }
+            
+            // Update time in footer
+            function updateAdminTime() {
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString('en-NG', { 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+                const dateStr = now.toLocaleDateString('en-NG', {
+                    weekday: 'short',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                
+                const timeElement = document.getElementById('adminCurrentTime');
+                if (timeElement) {
+                    timeElement.textContent = `${dateStr} ${timeStr}`;
+                }
+            }
+            
+            setInterval(updateAdminTime, 1000);
+            updateAdminTime();
+            
+            // Update storage status
+            function updateStorageStatus() {
+                let totalSize = 0;
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const value = localStorage.getItem(key);
+                    totalSize += key.length + (value ? value.length : 0);
+                }
+                
+                const kb = (totalSize / 1024).toFixed(2);
+                const statusElement = document.getElementById('storageStatus');
+                if (statusElement) {
+                    statusElement.textContent = `Storage: ${kb} KB used`;
+                }
+            }
+            
+            updateStorageStatus();
+            setInterval(updateStorageStatus, 30000); // Update every 30 seconds
+        });
+    </script>
+</body>
+</html>

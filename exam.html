@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination in Progress - GDSTC KHS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA</h1>
+                        <h2>GDSTC KHS - Examination in Progress</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <h3><i class="fas fa-clock"></i> Examination Timer</h3>
+                        <p>Your examination is being redirected. Please wait...</p>
+                    </div>
+
+                    <div class="timer-container">
+                        <div class="timer-label">Time Remaining:</div>
+                        <div class="timer-display" id="examTimer">30:00</div>
+                        <div class="timer-status" id="timerStatus">Starting exam...</div>
+                    </div>
+
+                    <div class="instructions-container">
+                        <h5><i class="fas fa-info-circle"></i> Examination in Progress</h5>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Do not close this window during the examination</li>
+                            <li><i class="fas fa-check-circle"></i> The timer will continue counting down</li>
+                            <li><i class="fas fa-check-circle"></i> When time reaches zero, your exam will auto-submit</li>
+                            <li><i class="fas fa-check-circle"></i> Keep this window open until exam completion</li>
+                        </ul>
+                    </div>
+
+                    <div id="googleFormRedirect" style="text-align: center; margin: 40px 0;">
+                        <h4 style="color: var(--dark-blue); margin-bottom: 20px;">
+                            <i class="fas fa-external-link-alt"></i> Redirecting to Examination...
+                        </h4>
+                        <div id="redirectCountdown">Redirecting in 5 seconds...</div>
+                        <div style="margin-top: 30px;">
+                            <button onclick="forceRedirect()" class="btn btn-primary">
+                                <i class="fas fa-external-link-square-alt"></i> Click here if not redirected automatically
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Important</h4>
+                        <p>This window must remain open for the entire duration of your examination.</p>
+                        <p>If you accidentally close it, your examination may be submitted automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h6><i class="fas fa-school"></i> GDSTC KHS</h6>
+                        <p>Government Day Science Technical College Kafin-Hausa</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-user-shield"></i> Examination Integrity</h6>
+                        <p>Your examination session is being monitored.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 GDSTC KHS - Online Examination Portal</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/exam-control.js"></script>
+</body>
+</html>

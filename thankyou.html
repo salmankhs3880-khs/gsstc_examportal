@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Submitted - GDSTC KHS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA</h1>
+                        <h2>GDSTC KHS - Examination Submission Confirmation</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="thank-you-container">
+                    <div class="thank-you-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                    <h2>Examination Submitted Successfully!</h2>
+                    
+                    <p>
+                        Thank you for completing your online examination. Your answers have been 
+                        submitted and recorded successfully.
+                    </p>
+                    
+                    <div class="result-info">
+                        <h4><i class="fas fa-clipboard-check"></i> What Happens Next?</h4>
+                        <p>1. Your examination will be graded by your subject teacher</p>
+                        <p>2. If you did not see your result immediately after submition, kindly be inform that it will be available on from the subject teacher within 48 hours</p>
+                        <p>3. You will receive notification when results are published</p>
+                        <p>4. For any inquiries, contact the examination office</p>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <div class="info-card" style="max-width: 500px; margin: 0 auto 20px;">
+                            <h5><i class="fas fa-user-graduate"></i> Student Information</h5>
+                            <p id="studentInfoFinal">Loading...</p>
+                        </div>
+                        
+                        <div class="info-card" style="max-width: 500px; margin: 0 auto 20px;">
+                            <h5><i class="fas fa-clock"></i> Submission Time</h5>
+                            <p id="submissionTime">Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <button onclick="window.location.href='index.html'" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Return to Home Page
+                        </button>
+                        
+                        <button onclick="handleLogoutFinal()" class="btn" style="background-color: #718096; margin-left: 15px;">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h6><i class="fas fa-school"></i> GDSTC KHS</h6>
+                        <p>Government Day Science Technical College Kafin-Hausa</p>
+                        <p>P.M.B. 1001, Kafin-Hausa, Jigawa State</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-envelope"></i> Contact Information</h6>
+                        <p>Email: info@gdstckhs.edu.ng</p>
+                        <p>Examination Office: exams@gdstckhs.edu.ng</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-calendar-check"></i> Results Information</h6>
+                        <p>Results will be published on the school notice board.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 GDSTC KHS - Online Examination Portal. All examination records are securely stored.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load student information
+            const adminNumber = localStorage.getItem('studentAdminNumber') || 'Not Available';
+            const username = localStorage.getItem('studentUsername') || 'Not Available';
+            
+            document.getElementById('studentInfoFinal').textContent = 
+                `Administration Number: ${adminNumber} | Username: ${username}`;
+            
+            // Set submission time
+            const submissionTime = localStorage.getItem('examSubmissionTime') || new Date().toISOString();
+            const submissionDate = new Date(submissionTime);
+            document.getElementById('submissionTime').textContent = submissionDate.toLocaleString();
+            
+            // Mark exam as completed
+            if (adminNumber !== 'Not Available') {
+                const studentKey = `exam_completed_${adminNumber}`;
+                localStorage.setItem(studentKey, 'true');
+                localStorage.setItem('examCompleted', 'true');
+                localStorage.setItem('examSubmissionTime', submissionTime);
+            }
+        });
+        
+        function handleLogoutFinal() {
+            localStorage.clear();
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

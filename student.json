@@ -1,0 +1,69 @@
+{
+    "students": [
+        {
+            "adminNumber": "GD2023001",
+            "username": "ahmed001",
+            "fullName": "AHMED ABUBAKAR",
+            "class": "SS3A",
+            "active": true,
+            "examCode": "GDSTC-EXAM-A1B2C3"
+        },
+        {
+            "adminNumber": "GD2023002",
+            "username": "fatima002",
+            "fullName": "FATIMA BALA",
+            "class": "SS3A",
+            "active": true,
+            "examCode": "GDSTC-EXAM-D4E5F6"
+        },
+        {
+            "adminNumber": "GD2023003",
+            "username": "musa003",
+            "fullName": "MUSA IBRAHIM",
+            "class": "SS3B",
+            "active": true,
+            "examCode": "GDSTC-EXAM-G7H8I9"
+        },
+        {
+            "adminNumber": "GD2023004",
+            "username": "aisha004",
+            "fullName": "AISHA MOHAMMED",
+            "class": "SS3B",
+            "active": true,
+            "examCode": "GDSTC-EXAM-J0K1L2"
+        },
+        {
+            "adminNumber": "GD2023005",
+            "username": "yusuf005",
+            "fullName": "YUSUF SANI",
+            "class": "SS3C",
+            "active": true,
+            "examCode": "GDSTC-EXAM-M3N4O5"
+        },
+        {
+            "adminNumber": "GD2023006",
+            "username": "halima006",
+            "fullName": "HALIMA USMAN",
+            "class": "SS3C",
+            "active": true,
+            "examCode": "GDSTC-EXAM-P6Q7R8"
+        },
+        {
+            "adminNumber": "GD2023007",
+            "username": "umar007",
+            "fullName": "UMAR ADAMU",
+            "class": "SS3D",
+            "active": true,
+            "examCode": "GDSTC-EXAM-S9T0U1"
+        },
+        {
+            "adminNumber": "GD2023008",
+            "username": "zainab008",
+            "fullName": "ZAINAB ALI",
+            "class": "SS3D",
+            "active": true,
+            "examCode": "GDSTC-EXAM-V2W3X4"
+        }
+    ]
+}
+

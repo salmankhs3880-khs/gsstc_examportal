@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Instructions - GDSTC KHS Examination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA</h1>
+                        <h2>GDSTC KHS - Online Examination Portal</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <h3><i class="fas fa-clipboard-list"></i> Examination Instructions</h3>
+                        <p>Please read all instructions carefully before starting the exam</p>
+                    </div>
+
+                    <div class="instructions-list">
+                        <ol>
+                            <li>
+                                <strong>Time Limit:</strong> You have exactly <strong>30 minutes</strong> to complete this examination.
+                                The timer will start immediately when you begin the test.
+                            </li>
+                            <li>
+                                <strong>Single Attempt:</strong> Each student is allowed only <strong>one attempt</strong> at this examination.
+                                Once you start, you cannot restart or retake the exam.
+                            </li>
+                            <li>
+                                <strong>Auto-Submission:</strong> The examination will automatically submit when:
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>The 30-minute timer expires</li>
+                                    <li>You click the submit button</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Browser Restrictions:</strong>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Do not refresh the page during the examination</li>
+                                    <li>Do not close the browser tab or window</li>
+                                    <li>Do not use the browser's back button</li>
+                                    <li>Do not open other tabs or applications</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Technical Issues:</strong> If you experience technical difficulties:
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Note the exact time the issue occurred</li>
+                                    <li>Contact technical support immediately</li>
+                                    <li>Do not attempt to restart the exam on your own</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Academic Integrity:</strong>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>This is an individual examination</li>
+                                    <li>No external help or resources are permitted</li>
+                                    <li>All answers must be your own work</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Results:</strong> Examination results will be available on the school portal
+                                48 hours after the examination period ends.
+                            </li>
+                        </ol>
+
+                        <div class="agreement-section">
+                            <div class="agreement-checkbox">
+                                <input type="checkbox" id="agreementCheckbox" name="agreement">
+                                <label for="agreementCheckbox">
+                                    <strong>I hereby confirm that:</strong>
+                                    <br>
+                                    1. I have read and understood all the examination instructions above.
+                                    <br>
+                                    2. I agree to abide by all examination rules and regulations.
+                                    <br>
+                                    3. I understand that any violation may result in disqualification.
+                                    <br>
+                                    4. I am ready to begin the 30-minute examination.
+                                </label>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px;">
+                                <button id="proceedToExamBtn" class="btn btn-start-exam btn-disabled" disabled>
+                                    <i class="fas fa-forward"></i> PROCEED TO EXAMINATION/TEST
+                                </button>
+                                
+                                <div style="margin-top: 20px;">
+                                    <button onclick="window.location.href='profile.html'" class="btn" style="background-color: #718096;">
+                                        <i class="fas fa-arrow-left"></i> Back to Dashboard
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h6><i class="fas fa-school"></i> GDSTC KHS</h6>
+                        <p>Government Day Science Technical College Kafin-Hausa</p>
+                        <p>Excellence in Technical Education</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-headset"></i> Technical Support</h6>
+                        <p>Email: support@gdstckhs.edu.ng</p>
+                        <p>Phone:  07065508738, 07088449900</p>
+                        <p>Available: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-exclamation-circle"></i> Emergency Contact</h6>
+                        <p>If you lose connection during exam, contact immediately with your administration number.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 GDSTC KHS - Online Examination Portal. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

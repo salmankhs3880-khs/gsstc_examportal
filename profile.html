@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - GDSTC KHS Examination</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA</h1>
+                        <h2>GDSTC KHS - Online Examination Portal</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <h3><i class="fas fa-user-graduate"></i> Student Dashboard</h3>
+                        <p>Welcome to your examination portal</p>
+                    </div>
+
+                    <div class="student-info">
+                        <div class="info-card">
+                            <h5><i class="fas fa-id-card"></i> Administration Number</h5>
+                            <p id="profileAdminNumber">--</p>
+                        </div>
+                        <div class="info-card">
+                            <h5><i class="fas fa-user"></i> Username</h5>
+                            <p id="profileUsername">--</p>
+                        </div>
+                        <div class="info-card">
+                            <h5><i class="fas fa-sign-in-alt"></i> Login Time</h5>
+                            <p id="loginTime">--</p>
+                        </div>
+                        <div class="info-card">
+                            <h5><i class="fas fa-clipboard-check"></i> Examination Status</h5>
+                            <p id="examStatus"><i class="fas fa-clock"></i> Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="exam-status">
+                        <h4><i class="fas fa-exclamation-circle"></i> Important Examination Information</h4>
+                        <p>Once you start the examination, you will have <strong>30 minutes</strong> to complete it.</p>
+                        <p>The timer will begin immediately when you click "START TEST".</p>
+                        <p><strong>Note:</strong> You can only take this exam once. Make sure you're ready before starting.</p>
+                    </div>
+
+                    <div class="exam-controls">
+                        <button id="startExamBtn" class="btn btn-start-exam">
+                            <i class="fas fa-play-circle"></i> START TEST
+                        </button>
+                        
+                        <div class="timer-display" id="countdownTimer">
+                            30:00
+                        </div>
+                        
+                        <p class="timer-note">Countdown will begin when you start the test</p>
+                        
+                        <div style="margin-top: 30px;">
+                            <button id="logoutBtn" class="btn" style="background-color: #718096;">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Warning</h4>
+                        <p>Do not refresh the page or close the browser during the examination.</p>
+                        <p>Any attempt to restart the exam will be logged and may result in disqualification.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h6><i class="fas fa-school"></i> GDSTC KHS</h6>
+                        <p>Government Day Science Technical College Kafin-Hausa</p>
+                        <p>Excellence in Technical Education</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-headset"></i> Technical Support</h6>
+                        <p>Email: support@gdstckhs.edu.ng</p>
+                        <p>Phone: +234 XXX XXX XXXX</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-shield-alt"></i> Security Notice</h6>
+                        <p>Your examination activity is being monitored for integrity purposes.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 GDSTC KHS - Online Examination Portal. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/timer.js"></script>
+</body>
+</html>

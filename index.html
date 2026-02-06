@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDSTC KHS - Secure Online Examination Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="school-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="school-name">
+                        <h1>GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA</h1>
+                        <h2>GDSTC KHS - Secure Online Examination Portal</h2>
+                    </div>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i> Secure Access Only
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="welcome-section">
+                    <h3><i class="fas fa-door-closed"></i> Restricted Access Portal</h3>
+                    <p>Access is restricted to registered GDSTC KHS students only. Unauthorized access is prohibited.</p>
+                </div>
+
+                <div class="login-container">
+                    <div class="login-header">
+                        <h4><i class="fas fa-user-shield"></i> Secure Student Login</h4>
+                        <p>Enter your credentials to continue</p>
+                        <div class="exam-time-info">
+                            <i class="fas fa-clock"></i> Exam Window: 
+                            <span id="examWindowDisplay">Loading...</span>
+                        </div>
+                    </div>
+
+                    <form id="loginForm" class="login-form">
+                        <!-- Student Credentials -->
+                        <div class="form-group">
+                            <label for="adminNumber">
+                                <i class="fas fa-id-card"></i> Administration Number
+                            </label>
+                            <input 
+                                type="text" 
+                                id="adminNumber" 
+                                placeholder="Enter your administration number" 
+                                required
+                                pattern="GD[A-Z0-9]{5,10}"
+                                title="Format: GD followed by numbers/letters">
+                            <div class="input-hint">e.g., GD2023001 (Case sensitive)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">
+                                <i class="fas fa-user"></i> Username
+                            </label>
+                            <input 
+                                type="text" 
+                                id="username" 
+                                placeholder="Enter your username" 
+                                required
+                                pattern="[A-Za-z0-9]{3,20}"
+                                title="3-20 alphanumeric characters">
+                            <div class="input-hint">Provided by school administration</div>
+                        </div>
+
+                        <!-- School Access Code -->
+                        <div class="form-group">
+                            <label for="schoolPassword">
+                                <i class="fas fa-lock"></i> School Access Code
+                            </label>
+                            <input 
+                                type="password" 
+                                id="schoolPassword" 
+                                placeholder="Enter school access code" 
+                                required>
+                            <div class="input-hint">Provided to registered students only</div>
+                        </div>
+
+                        <!-- CAPTCHA Verification -->
+                        <div class="form-group">
+                            <label for="captchaInput">
+                                <i class="fas fa-robot"></i> Security Verification
+                            </label>
+                            <div class="captcha-container">
+                                <div class="captcha-display">
+                                    <div id="captchaText" class="captcha-text">LOADING...</div>
+                                    <button type="button" id="refreshCaptcha" class="btn-captcha-refresh">
+                                        <i class="fas fa-redo"></i>
+                                    </button>
+                                </div>
+                                <input 
+                                    type="text" 
+                                    id="captchaInput" 
+                                    placeholder="Enter the code above" 
+                                    required
+                                    autocomplete="off"
+                                    maxlength="6">
+                                <div class="input-hint">Enter the 6 characters shown above</div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-login" id="loginButton">
+                                <i class="fas fa-sign-in-alt"></i> Secure Login
+                            </button>
+                            <div class="login-status" id="loginStatus"></div>
+                        </div>
+
+                        <div class="security-notice">
+                            <p><i class="fas fa-exclamation-triangle"></i> <strong>Security Notice:</strong></p>
+                            <ul>
+                                <li>Access is logged and monitored</li>
+                                <li>Multiple failed attempts will be blocked</li>
+                                <li>Unauthorized access is prohibited</li>
+                                <li>All activities are recorded</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="access-instructions">
+                    <h5><i class="fas fa-key"></i> Access Instructions for Students</h5>
+                    <ol>
+                        <li>Use credentials provided by school administration</li>
+                        <li>Enter the school access code given to you</li>
+                        <li>Complete the security verification</li>
+                        <li>Access is only available during examination period</li>
+                        <li>Contact your teacher if you face issues</li>
+                    </ol>
+                    
+                    <div class="contact-support">
+                        <p><i class="fas fa-headset"></i> <strong>Technical Support:</strong></p>
+                        <p>Email: <span class="contact-email">examsupport@gdstckhs.edu.ng</span></p>
+                        <p>Available: 8:00 AM - 4:00 PM on exam days</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h6><i class="fas fa-school"></i> GDSTC KHS</h6>
+                        <p>Government Day Science Technical College Kafin-Hausa</p>
+                        <p>Secure Examination Portal v2.0</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-shield-alt"></i> Security Information</h6>
+                        <p>© 2024 GDSTC KHS. All rights reserved.</p>
+                        <p>Unauthorized access is strictly prohibited.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h6><i class="fas fa-exclamation-circle"></i> Legal Notice</h6>
+                        <p>This system is for authorized users only.</p>
+                        <p>All activities are monitored and logged.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p id="currentDateTime">Loading date and time...</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Security Scripts -->
+    <script src="js/auth.js"></script>
+    <script>
+        // Update date time in footer
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            };
+            document.getElementById('currentDateTime').textContent = 
+                now.toLocaleDateString('en-NG', options);
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "schoolName": "GOVERNMENT DAY SCIENCE TECHNICAL COLLEGE KAFIN-HAUSA",
+    "examName": "END OF TERM EXAMINATION 2024",
+    "useStudentList": true,
+    "allowRetake": false,
+    "maxAttempts": 1,
+    "examDuration": 30,
+    "securityLevel": "high",
+    "version": "2.0",
+    "lastUpdated": "2024-06-01"
+}
+
+
